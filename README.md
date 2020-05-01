@@ -16,3 +16,21 @@
 - SignUpActivity에서 putExtra로 이메일과 비밀번호 값을 전달
 - onActivityResult 함수를 override하여 SignUpActivity에서 받은 data를 처리
 
+## 2주차 세미나
+
+### Bottom Navigation, View Pager, Recycler View 구현
+
+#### Todo
+
+- 눌러서 이동할 수 있는 하단 탭바 구현 
+- 스와이프로 탭 이동 가능
+- 스와이프로 탭 이동시 하단탭바 아이콘 변경
+- 리싸이클러뷰로 리스트 띄우기
+
+#### How
+
+- BottomNavigationView로 하단탭바 레이아웃 구현
+- ViewPager로 스와이프로 이동 가능한 뷰 구현
+- PagerAdapter에서 getItem 함수를 override하여 파라미터로 전달된 position에 해당하는 fragment를 생성
+- Activity에서 BottomNavigationView에 setOnNavigationItemSelectedListener를 달아 선택한 탭 아이콘에 따라 위에 페이지를 변경하도록 구현
+- Activity에서 ViewPager에 addOnPageChangeListener를 달아 onPageSelected 함수를 override하여 스와이프로 페이지 변경 시 페이지에 해당하는 아이콘이 선택되도록 구현 
