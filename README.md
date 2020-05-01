@@ -16,6 +16,7 @@
 - SignUpActivity에서 putExtra로 이메일과 비밀번호 값을 전달
 - onActivityResult 함수를 override하여 SignUpActivity에서 받은 data를 처리
 
+
 ## 2주차 세미나
 
 ### Bottom Navigation, View Pager, Recycler View 구현
