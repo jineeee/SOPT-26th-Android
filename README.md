@@ -2,16 +2,16 @@
 
 ## 1주차 세미나
 
-### 회원가입, 로그인 구현
+### 회원가입, 로그인 구현, constraint layout 익숙해지기
 
 #### Todo
 
-1. 
-- 로그인뷰에서 회원가입뷰로 이동 가능
-- 회원가입 완료 시 로그인뷰로 돌아옴
-- 회원가입뷰에서 입력했던 아이디와 비밀번호가 로그인뷰에 나타남
-2. 
-- constraintDimensionRatio를 사용하여 이미지 크기를 1:1 비율로 나타내기
+1.
+  -   로그인뷰에서 회원가입뷰로 이동 가능
+  - 회원가입 완료 시 로그인뷰로 돌아옴
+  - 회원가입뷰에서 입력했던 아이디와 비밀번호가 로그인뷰에 나타남
+2.
+  - constraintDimensionRatio를 사용하여 이미지 크기를 1:1 비율로 나타내기
 
 #### How
 
@@ -23,6 +23,14 @@
 - xml에서 layout_constraintDimensionRatio 속성을 사용하여 비율로 이미지 크기 조정 가능
 - 속성 값으로는 "가로비율:세로비율" 또는 "h(height) or w(width), 가로비율:세로비율" 두 가지 포맷 사용
 - "h or w, 가로비율:세로비율" 형식은 가로, 세로를 모두 0dp로 설정 후 h 또는 w로 변경될 사이드를 지정하여 사용
+```kotlin
+<ImageView 
+  android:layout_width="0dp"
+  android:layout_height="0dp"
+  app:layout_constraintDimensionRatio="H,16:9"
+  app:layout_constraintBottom_toBottomOf="parent"
+  app:layout_constraintTop_toTopOf="parent"/>
+```
 
 
 ## 2주차 세미나
