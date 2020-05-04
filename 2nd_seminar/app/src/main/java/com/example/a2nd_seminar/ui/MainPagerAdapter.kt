@@ -1,4 +1,4 @@
-package com.example.a2nd_seminar
+package com.example.a2nd_seminar.ui
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

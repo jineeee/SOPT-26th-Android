@@ -1,8 +1,9 @@
-package com.example.a2nd_seminar
+package com.example.a2nd_seminar.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
+import com.example.a2nd_seminar.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        container.adapter = MainPagerAdapter(supportFragmentManager, 3)
+        container.adapter =
+            MainPagerAdapter(
+                supportFragmentManager,
+                3
+            )
         container.offscreenPageLimit = 2
         container.setCurrentItem(1)
         bottomNaviBar.menu.getItem(1).setChecked(true)
