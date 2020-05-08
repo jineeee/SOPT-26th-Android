@@ -91,7 +91,7 @@ class ItemDecorator(private val verticalSpacing: Int): RecyclerView.ItemDecorati
     }
 }
 ```
-- 원하는 fragment 클래스에서 RecyclerView에 **addItemDecoration()**함수를 사용해 ItemDecoration 적용
+- 원하는 fragment 클래스에서 RecyclerView에 **addItemDecoration()** 함수를 사용해 ItemDecoration 적용
 ```kotlin
 fragHomeRv.addItemDecoration(ItemDecorator(5)) 
 ```
