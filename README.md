@@ -46,10 +46,57 @@
 #### 💡 How
 
 - **BottomNavigationView**로 하단탭바 레이아웃 구현
+```kotlin
+<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNaviBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:itemIconSize="22dp"
+        android:background="#073392"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+```
+- menu.xml 파일로 하단탭에 표시될 아이콘과 타이틀 지정
 - **ViewPager**로 스와이프로 이동 가능한 뷰 구현
-- PagerAdapter에서 getItem 함수를 override하여 파라미터로 전달된 position에 해당하는 fragment를 생성
+- 해당 뷰의 크기를 match_constraint로 지정해야 원하는 영역까지 내용을 보여줄 수 있음
+```kotlin
+<androidx.viewpager.widget.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNaviBar"/>
+```
+- FragmentStatePagerAdapter 클래스를 상속받는 PagerAdapter에서 getItem 함수를 override하여 파라미터로 전달된 position에 해당하는 fragment를 생성
+```kotlin
+override fun getItem(position: Int): Fragment {
+  when(position){
+    0 -> return HomeFragment().newInstance()
+    1 -> return BookFragment().newInstance()
+    2 -> return MyPageFragment().newInstance()
+    else -> null!!
+  }
+}
+```
 - Activity에서 BottomNavigationView에 **setOnNavigationItemSelectedListener**를 달아 선택한 탭 아이콘에 따라 위에 페이지를 변경하도록 구현
+```kotlin
+bottomNaviBar.setOnNavigationItemSelectedListener {
+  when (it.itemId) {
+    R.id.action_home -> container.currentItem = 0
+    R.id.action_book -> container.currentItem = 1
+    R.id.action_myPage -> container.currentItem = 2
+   }
+  true
+}
+```
 - Activity에서 ViewPager에 **addOnPageChangeListener**를 달아 onPageSelected 함수를 override하여 스와이프로 페이지 변경 시 페이지에 해당하는 아이콘이 선택되도록 구현 
+```kotlin
+override fun onPageSelected(position: Int) {
+  bottomNaviBar.menu.getItem(position).isChecked = true
+}
+```
 
 ### Recycler View로 instagram 리스트 구현
 
