@@ -33,7 +33,7 @@
 
 ## 2주차 세미나
 
-### Bottom Navigation, View Pager, Recycler View 구현
+### Bottom Navigation, View Pager
 
 #### 📌 Todo
 
@@ -50,3 +50,57 @@
 - PagerAdapter에서 getItem 함수를 override하여 파라미터로 전달된 position에 해당하는 fragment를 생성
 - Activity에서 BottomNavigationView에 **setOnNavigationItemSelectedListener**를 달아 선택한 탭 아이콘에 따라 위에 페이지를 변경하도록 구현
 - Activity에서 ViewPager에 **addOnPageChangeListener**를 달아 onPageSelected 함수를 override하여 스와이프로 페이지 변경 시 페이지에 해당하는 아이콘이 선택되도록 구현 
+
+### Recycler View로 instagram 리스트 구현
+
+#### 📌 Todo
+
+- instagram 아이템 만들기
+- Recycler View로 instagram 아이템 리스트 띄우기
+
+#### 💡 How
+
+- item의 프로필 이미지는 동그랗게 띄워야하므로 **CircleImageView** 라이브러리 사용
+- 리스트를 띄우고 싶은 fragment에 recyclerView 추가
+- RecyclerViewAdapter와 ViewHolder를 이용해 아이템을 리스트에 연결
+- RecyclerView 내부의 **ItemDecoration**클래스를 상속받는 클래스를 만들어 아이템을 꾸밀 때 쓸 내용을 작성
+- ItemDecoration클래스는 추상클래스이므로 원하는 함수를 override 하여 사용 가능
+- **parent.getChildAdapterPosition(view)** 와 **state.itemCount**를 사용하여 첫번째, 마지막, 그 이외 아이템에 각기 다른 속성 적용 가능
+```kotlin
+class ItemDecorator(private val verticalSpacing: Int): RecyclerView.ItemDecoration(){
+
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        super.getItemOffsets(outRect, view, parent, state)
+
+        val itemPosition = parent.getChildAdapterPosition(view)
+        val itemCount = state.itemCount
+
+        // 첫번째 아이템
+        if (itemPosition == 0) {
+            outRect.bottom = verticalSpacing
+        }
+        // 마지막 아이템
+        else if (itemCount > 0 && itemPosition == itemCount - 1) {
+            outRect.top = verticalSpacing
+        }
+        // 사이에 있는 모든 아이템
+        else {
+            outRect.top = verticalSpacing
+            outRect.bottom = verticalSpacing
+        }
+    }
+}
+```
+- 원하는 fragment 클래스에서 RecyclerView에 **addItemDecoration()**함수를 사용해 ItemDecoration 적용
+```kotlin
+fragHomeRv.addItemDecoration(ItemDecorator(5)) 
+```
+- 좀 더 자연스러운 리스트뷰 구현을 통해 **clipToPadding** 속성을 사용하면 스크롤 시 RecyclerView에 준 패딩 부분까지 리스트의 내용을 보여줄 있음
+```kotlin
+<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frag_home_rv"
+        android:clipToPadding="false"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+```
