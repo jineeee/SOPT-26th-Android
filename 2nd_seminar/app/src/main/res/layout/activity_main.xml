@@ -17,12 +17,15 @@
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4263FF">
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="30dp"
+            android:background="#073392">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2nd_seminar"
+                android:textSize="25sp"
+                android:text="Instagram"
                 android:textStyle="bold"
                 android:textColor="@color/cardview_light_background"
                 android:gravity="center"/>
@@ -44,7 +47,7 @@
         app:itemIconSize="22dp"
         app:itemTextColor="@drawable/icon_selector"
         app:itemIconTint="@drawable/icon_selector"
-        android:background="#9865FF"
+        android:background="#073392"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

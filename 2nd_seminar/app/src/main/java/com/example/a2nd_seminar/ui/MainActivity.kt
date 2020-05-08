@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
                 3
             )
         container.offscreenPageLimit = 2
-        container.setCurrentItem(1)
-        bottomNaviBar.menu.getItem(1).setChecked(true)
+        container.currentItem = 0
+        bottomNaviBar.menu.getItem(0).isChecked = true
 
         bottomNavi()
         changeItem()
@@ -28,15 +28,9 @@ class MainActivity : AppCompatActivity() {
     fun bottomNavi(){
         bottomNaviBar.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.action_one -> {
-                    container.setCurrentItem(0)
-                }
-                R.id.action_two -> {
-                    container.setCurrentItem(1)
-                }
-                R.id.action_three -> {
-                    container.setCurrentItem(2)
-                }
+                R.id.action_home -> container.currentItem = 0
+                R.id.action_book -> container.currentItem = 1
+                R.id.action_myPage -> container.currentItem = 2
             }
             true
         }
@@ -45,16 +39,13 @@ class MainActivity : AppCompatActivity() {
     private fun changeItem(){
 
         container.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
-            override fun onPageScrollStateChanged(state: Int) {
-
-            }
+            override fun onPageScrollStateChanged(state: Int) { }
 
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
                 positionOffsetPixels: Int
-            ) {
-            }
+            ) { }
 
             override fun onPageSelected(position: Int) {
                 bottomNaviBar.menu.getItem(position).isChecked = true

@@ -9,9 +9,9 @@ class MainPagerAdapter (fm : FragmentManager, val fragmentCount : Int):
 
     override fun getItem(position: Int): Fragment {
         when(position){
-            0 -> return OneFragment().newInstance()
-            1 -> return TwoFragment().newInstance()
-            2 -> return ThreeFragment().newInstance()
+            0 -> return HomeFragment().newInstance()
+            1 -> return BookFragment().newInstance()
+            2 -> return MyPageFragment().newInstance()
             else -> null!!
         }
     }
