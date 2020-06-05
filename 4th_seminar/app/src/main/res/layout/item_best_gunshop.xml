@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/txtRankNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#707070"
+        tools:text="1"
+        android:fontFamily="@font/notosans_bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    
+    <ImageView
+        android:id="@+id/ivShopLogo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        tools:src="@drawable/gunshop_img_bestshoplogo_1"
+        android:layout_marginStart="9dp"
+        app:layout_constraintStart_toEndOf="@id/txtRankNum"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtShopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#707070"
+        android:textSize="13sp"
+        android:fontFamily="@font/notosans_bold"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="26dp"
+        app:layout_constraintStart_toEndOf="@+id/ivShopLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="코코곰신" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#c3c3c3"
+        android:textSize="13sp"
+        android:fontFamily="@font/notosans_medium"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="@+id/txtShopName"
+        app:layout_constraintTop_toBottomOf="@+id/txtShopName"
+        tools:text="군입대 준비물, 군인용품 직배송" />
+
+    <ImageView
+        android:id="@+id/btnViewMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gunshop_btn_bestgunshop_viewmore_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#c3c3c3"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

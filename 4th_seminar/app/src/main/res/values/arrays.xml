@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rank_array">
+        <item>육군랭킹</item>
+        <item>해군랭킹</item>
+        <item>공군랭킹</item>
+        <item>해병랭킹</item>
+        <item>의경랭킹</item>
+    </string-array>
+</resources>

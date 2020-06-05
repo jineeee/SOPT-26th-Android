@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.gunshop.GunShopFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <View
+                android:id="@+id/underline"
+                android:layout_width="106dp"
+                android:layout_height="12dp"
+                android:background="@color/colorMint"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
+                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                app:layout_constraintStart_toStartOf="@+id/txtTitle" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="5sp"
+                android:text="무엇을\n찾으시나요?"
+                android:fontFamily="@font/notosans_bold"
+                android:textColor="#4b4b4b"
+                android:textSize="20sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/box_edittext_search"
+                android:drawableEnd="@drawable/gunshop_icon_search"
+                android:fontFamily="@font/notosans_medium"
+                android:hint="검색어를 입력하세요"
+                android:letterSpacing="-0.02"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:singleLine="true"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="#c3c3c3"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/underline">
+                <!--<requestFocus/>-->
+            </EditText>
+
+            <TextView
+                android:id="@+id/txtPopularTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인기태그"
+                android:textColor="@color/colorBlack"
+                android:textSize="13sp"
+                android:fontFamily="@font/notosans_bold"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSearch" />
+
+            <LinearLayout
+                android:id="@+id/tagContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="11dp"
+                app:layout_constraintStart_toEndOf="@id/txtPopularTags"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPopularTags"
+                app:layout_constraintTop_toTopOf="@+id/txtPopularTags" />
+
+            <ImageView
+                android:id="@+id/btnTagMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gunshop_btn_tagmore"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPopularTags"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtPopularTags" />
+
+            <TextView
+                android:id="@+id/txtCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="-0.02"
+                android:text="상품 카테고리"
+                android:fontFamily="@font/notosans_medium"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:layout_marginTop="27dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPopularTags" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/categoryContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="18dp"
+                app:layout_constraintTop_toBottomOf="@id/txtCategory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/btnFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnShirt"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/gunshop_ic_food"/>
+
+                <ImageView
+                    android:id="@+id/btnShirt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/btnFood"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnStuff"
+                    android:src="@drawable/gunshop_ic_shirt"/>
+
+                <ImageView
+                    android:id="@+id/btnStuff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/btnShirt"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnBeauty"
+                    android:src="@drawable/gunshop_ic_stuff"/>
+
+                <ImageView
+                    android:id="@+id/btnBeauty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/btnStuff"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnLiving"
+                    android:src="@drawable/gunshop_ic_beauty"/>
+
+                <ImageView
+                    android:id="@+id/btnLiving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/btnBeauty"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnAll"
+                    android:src="@drawable/gunshop_ic_living"/>
+
+                <ImageView
+                    android:id="@+id/btnAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/btnLiving"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/gunshop_ic_all"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/frag_sun_shop_cl_best_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                app:layout_constraintTop_toBottomOf="@+id/categoryContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:shadowColor="#f0f0f0"
+                    android:shadowDy="4"
+                    android:shadowRadius="15"
+                    android:text="베스트 상품"
+                    android:fontFamily="@font/notosans_medium"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:entries="@array/rank_array"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/frag_gun_shop_rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="12dp"
+                app:layout_constraintTop_toBottomOf="@id/frag_sun_shop_cl_best_item"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <ImageView
+                android:id="@+id/btnProductMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gunshop_btn_allproduct"
+                app:layout_constraintTop_toBottomOf="@id/frag_gun_shop_rv_list"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/txtBestGunShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="-0.02"
+                android:text="베스트 군샵"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:fontFamily="@font/notosans_medium"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnProductMore" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBestGunShop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBestGunShop" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gunshop_btn_allshop"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvBestGunShop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

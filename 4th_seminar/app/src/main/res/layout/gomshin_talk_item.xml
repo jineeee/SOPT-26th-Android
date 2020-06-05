@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="109dp"
+    android:paddingHorizontal="27dp">
+
+    <TextView
+        android:id="@+id/tv_list_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="500"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="7sp"
+        android:text="0"
+        android:textColor="#a9e0d4"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="900"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="휴학이 너무 하고 싶어요 휴학이 너무adfadf"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_list_num"
+        app:layout_constraintEnd_toStartOf="@+id/img_content_image"
+        app:layout_constraintStart_toEndOf="@+id/tv_list_num"
+        app:layout_constraintTop_toTopOf="@+id/tv_list_num" />
+
+    <ImageView
+        android:id="@+id/img_content_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_user_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="100"
+        android:gravity="center_horizontal"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="4sp"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:text="Lv.25" />
+
+    <TextView
+        android:id="@+id/tv_user_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="100"
+        android:gravity="center_horizontal"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="4sp"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_user_level"
+        app:layout_constraintStart_toEndOf="@+id/tv_user_level"
+        app:layout_constraintTop_toTopOf="@+id/tv_user_level"
+        android:text="곰신하지마요" />
+
+    <ImageView
+        android:id="@+id/ic_military_rank"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="7dp"
+        android:src="@drawable/ic_airforce4"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_user_nick"
+        app:layout_constraintStart_toEndOf="@+id/tv_user_nick"
+        app:layout_constraintTop_toTopOf="@+id/tv_user_nick" />
+
+    <ImageView
+        android:id="@+id/ic_like"
+        android:layout_width="9dp"
+        android:layout_height="8dp"
+        android:src="@drawable/ic_like"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_user_level"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_level" />
+
+    <TextView
+        android:id="@+id/tv_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="4sp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="100"
+        android:text="152"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ic_like"
+        app:layout_constraintStart_toEndOf="@+id/ic_like"
+        app:layout_constraintTop_toTopOf="@+id/ic_like" />
+
+    <ImageView
+        android:id="@+id/ic_comment"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="11dp"
+        android:src="@drawable/ic_comment"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_like_count"
+        app:layout_constraintStart_toEndOf="@+id/tv_like_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_like_count" />
+
+    <TextView
+        android:id="@+id/tv_comment_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="4sp"
+        android:text="31"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="100"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ic_comment"
+        app:layout_constraintStart_toEndOf="@+id/ic_comment"
+        app:layout_constraintTop_toTopOf="@+id/ic_comment" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="2dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="11dp"
+        android:background="#e5e5e5"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_comment_count"
+        app:layout_constraintStart_toEndOf="@+id/tv_comment_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_comment_count" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="4sp"
+        android:text="12시간 전"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:fontFamily="@font/notosans_fontfamily"
+        android:textFontWeight="100"
+        android:layout_marginStart="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/ic_minitalk"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="3sp"
+        android:text="연애상담"
+        android:textColor="#00b9b1"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
