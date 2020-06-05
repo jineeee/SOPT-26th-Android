@@ -12,7 +12,7 @@ import android.widget.Toast
 import com.example.a1st_seminar.R
 import com.example.a1st_seminar.data.NetworkServiceImpl
 import com.example.a1st_seminar.data.model.SignInResponse
-import com.example.a1st_seminar.ui.MainActivity
+import com.example.a1st_seminar.ui.insta.MainActivity
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import org.json.JSONObject

@@ -1,4 +1,4 @@
-package com.example.a1st_seminar.ui
+package com.example.a1st_seminar.ui.insta
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
